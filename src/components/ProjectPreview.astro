@@ -1,0 +1,13 @@
+---
+import type { ProjectsPreview } from "@/types/home-project";
+
+interface Props {
+    Project: ProjectsPreview;
+}
+
+const { Project: projectData } = Astro.props;
+---
+
+<h1>{projectData.TitlePortfolio}</h1>
+<p>{projectData.ShortIntroPortfolio}</p>
+<img src={projectData.HeroPreview.url} />

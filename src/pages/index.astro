@@ -2,11 +2,20 @@
 import { getHomeData } from "@/services/home-project";
 import Layout from "../layouts/Layout.astro";
 import HeroOne from "../components/HeroOne.astro";
+import CardOne from "@/components/CardOne.astro";
+import DataOne from "@/components/DataOne.astro";
+import ProjectOne from "@/components/ProjectOne.astro";
+import ProjectPreview from "@/components/ProjectPreview.astro";
+import UsOne from "@/components/UsOne.astro";
 
 const homeData = await getHomeData();
-const { Hero } = homeData;
+const { Hero, Card, DataZone, ProjectZone, UsZone } = homeData;
 ---
 
 <Layout>
 	<HeroOne Hero={Hero} />
+	<CardOne Card={Card} />
+	<DataOne DataZone={DataZone} />
+	<ProjectOne ProjectZone={ProjectZone} />
+	<UsOne UsZone={UsZone} />
 </Layout>

@@ -1,0 +1,22 @@
+---
+import type { CardComponent } from "@/types/home-project";
+
+interface Props {
+    Card: CardComponent;
+}
+
+const { Card } = Astro.props;
+---
+
+<div class="w-full h-52 bg-blue-300">
+    <div class="px-10">
+        <h2 class="text-xl py-5">{Card.CardTitle}</h2>
+        <p class="py-4">{Card.CardText}</p>
+        <a
+            href={Card.CardButtonLink}
+            target="_blank"
+            class="bg-gray-400 text-white font-bold py-2 px-4 rounded cursor-pointer hover:bg-slate-600"
+            >{Card.CardButtonText}</a
+        >
+    </div>
+</div>

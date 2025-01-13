@@ -3,7 +3,7 @@ import type { HomeDevelop, HomeData } from "@/types/home-project";
 export function mappedHome(
     strapiData: HomeData
 ): HomeDevelop {
-    const { Hero, Card, DataZone, ProjectZone, UsZone } = strapiData.data;
+    const { ProjectP, Hero, Card, DataZone, ProjectZone, UsZone } = strapiData.data;
 
     const newData: HomeDevelop = {
         Hero: {
@@ -44,7 +44,14 @@ export function mappedHome(
             ImageUsZone: {
                 url: UsZone.ImageUsZone.url
             }
-        }
+        },
+        ProjectP: {
+            TitlePortfolio: ProjectP?.TitlePortfolio || "No hay un titulo para mostrar",
+            ShortIntroPortfolio: ProjectP?.ShortIntroPortfolio || "No hay un texto para mostrar",
+            HeroPreview: {
+                url: ProjectP?.HeroPreview?.url || "No hay una imagen para mostrar"
+            }
+        },
     };
     return newData
 }

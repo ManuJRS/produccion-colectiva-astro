@@ -4,6 +4,14 @@ export interface HomeDevelop {
     DataZone: DataComponent;
     ProjectZone: ProjectComponent;
     UsZone: UsComponent;
+    ProjectP: ProjectsPreview;
+}
+
+export interface ProjectsPreview {
+    TitlePortfolio: string;
+    ShortIntroPortfolio: string;
+    HeroPreview: ImageData;
+
 }
 
 export interface HeroComponent {
@@ -61,15 +69,16 @@ export interface Data {
     createdAt: Date;
     updatedAt: Date;
     publishedAt: Date;
+    ProjectZone: ProjectZone;
     Hero: Hero;
     Card: Card;
     DataZone: DataZone;
-    ProjectZone: ProjectZone;
     UsZone: UsZone;
+    ProjectP: Project; // SE TIENE QUE AGREGAR PARA QUE FUNCIONE EL MAPPED!!!
 }
 
 export interface Card {
-    id: number;
+    id?: number; //TUVE QUE PONER QUE ID FUERA OPCIONAL PORQUE ME DABA ERROR EN EL INDEX
     CardTitle: string;
     CardText: string;
     CardButtonText: string;
@@ -151,9 +160,21 @@ export interface ProviderMetadata {
 }
 
 export interface ProjectZone {
-    id: number;
+    id?: number;
     TitleProjectsZone: string;
     TextProjectsZone: string;
+    projects?: Project[];
+}
+
+export interface Project {
+    id: number;
+    documentId: string;
+    createdAt: Date;
+    updatedAt: Date;
+    publishedAt: Date;
+    TitlePortfolio: string;
+    ShortIntroPortfolio: string;
+    HeroPreview: HeroDesktop;
 }
 
 export interface UsZone {

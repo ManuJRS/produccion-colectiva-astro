@@ -1,0 +1,22 @@
+---
+import type { UsComponent } from "@/types/home-project";
+
+interface Props {
+    UsZone: UsComponent;
+}
+
+const { UsZone } = Astro.props;
+---
+
+<div class="flex justify-center w-full h-auto bg-lime-100">
+    <div class="text-center py-5">
+        <h2 class="text-xl py-5">{UsZone.TitleUsZone}</h2>
+        <a
+            href={UsZone.ButtonUsLink}
+            target="_blank"
+            class="bg-gray-400 text-white font-bold py-2 px-4 rounded cursor-pointer hover:bg-slate-600"
+            >{UsZone.ButtonUsText}</a
+        >
+        <img src={UsZone.ImageUsZone.url} alt="" class="w-4/5 mx-auto py-5" />
+    </div>
+</div>
