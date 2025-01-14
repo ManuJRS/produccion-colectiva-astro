@@ -1,0 +1,22 @@
+---
+import type { introductionSection } from "@/types/home-project";
+
+interface Props {
+    introduction: introductionSection;
+}
+
+const { introduction } = Astro.props;
+---
+
+<div class="w-full h-auto bg-blue-300">
+    <div class="px-10 py-20">
+        <h2 class="text-xl py-5">{introduction.title}</h2>
+        <p class="py-4">{introduction.text}</p>
+        <a
+            href={introduction.link}
+            target="_blank"
+            class="bg-gray-400 text-white font-bold py-2 px-4 rounded cursor-pointer hover:bg-slate-600"
+            >{introduction.button}</a
+        >
+    </div>
+</div>
