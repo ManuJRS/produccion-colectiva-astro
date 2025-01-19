@@ -1,0 +1,16 @@
+---
+import { getHomeData } from "@/services/home-project";
+import Layout from "@/layouts/Layout.astro";
+import HeroProjects from "@/components/ProjectsComponents/HeroProjects.astro";
+import IntroProjects from "@/components/ProjectsComponents/IntroProjects.astro";
+import ContentProjects from "@/components/ProjectsComponents/ContentProjects.astro";
+
+const homeData = await getHomeData();
+const {hero} = homeData;
+---
+
+<Layout>
+    <HeroProjects hero={hero}/>
+    <IntroProjects />
+    <ContentProjects />
+</Layout>
