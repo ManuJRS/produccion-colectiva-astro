@@ -8,14 +8,21 @@ interface Props {
 const { introduction } = Astro.props;
 ---
 
-<div class="w-full h-auto bg-slate-300">
-    <div class="px-16 py-20">
-        <h2 class="text-xl py-5">{introduction.title}</h2>
-        <p class="py-4">{introduction.text}</p>
+<div
+    class="w-full h-[350px] bg-custom-green flex items-center"
+    style="background-image: url('https://res.cloudinary.com/dronteu5m/image/upload/v1737321923/strapi-demo/casabg_5f6e63cbfc.webp'); background-position: bottom left; background-repeat: no-repeat; background-size: 300px 300px;"
+>
+    <div class="px-40">
+        <h2 class="text-5xl text-white drop-shadow-lg font-bold">
+            {introduction.title}
+        </h2>
+        <p class="py-5 text-white drop-shadow-lg">
+            {introduction.text}
+        </p>
         <a
             href={introduction.link}
             target="_blank"
-            class="bg-gray-400 text-white font-bold py-2 px-4 rounded cursor-pointer hover:bg-slate-600"
+            class="bg-white text-custom-green font-bold py-2 px-4 rounded cursor-pointer hover:bg-slate-600 drop-shadow-lg"
             >{introduction.button}</a
         >
     </div>

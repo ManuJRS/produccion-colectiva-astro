@@ -8,17 +8,24 @@ interface Props {
 const { hero } = Astro.props;
 ---
 
-<section class="w-full bg-slate-100 h-[600px]">
+<section class="w-full bg-slate-100 h-[800px]">
     <div
         class="w-full h-full bg-center relative bg-no-repeat bg-cover bg-black"
         style={`background-image: url('${hero.heroDesktop.url}')`}
     >
         <div class="inset-0 bg-black/50 absolute"></div>
-        <div class="max-w-7xl m-auto w-full relative h-full">
-            <div class="w-full h-full flex justify-center items-center">
-                <h2 class="text-gray-100 text-7xl font-semibold">
-                    {hero.title}
-                </h2>
+        <div class="max-w-7xl m-auto w-full relative h-full py-20">
+            <div
+                class="absolute top-1/2 left-1/2 transform -translate-x-3/4 -translate-y-1/2 bg-custom-orange bg-opacity-60 justify-start items-center flex"
+                style="width: 1000px; height: 250px;"
+            >
+                <div style="width: 500px;">
+                    <h2
+                        class="text-gray-100 text-7xl font-semibold text-left pl-4"
+                    >
+                        {hero.title}
+                    </h2>
+                </div>
             </div>
         </div>
     </div>

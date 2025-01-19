@@ -1,17 +1,17 @@
 ---
-import type {heroSection} from "@/types/home-project.ts";
+import type { heroSection } from "@/types/project-preview";
 
 interface Props {
-    hero:heroSection;
+    hero: heroSection;
 }
 
-const {hero} = Astro.props;
+const { hero } = Astro.props;
 ---
 
 <section class="w-full bg-slate-100 h-[600px]">
     <div
-        class="w-full h-full bg-center relative bg-no-repeat bg-cover bg-black"
-        style={`background-image: url('${hero.heroDesktop.url}')`}
+        class="w-full h-full bg-center relative bg-no-repeat bg-cover bg-custom-blue"
+        style="background-image: url('https://res.cloudinary.com/dronteu5m/image/upload/v1737321923/strapi-demo/casabg_5f6e63cbfc.webp'); background-position: bottom left; background-repeat: no-repeat; background-size: 300px 300px;"
     >
         <div class="inset-0 bg-black/50 absolute"></div>
         <div class="max-w-7xl m-auto w-full relative h-full">

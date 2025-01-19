@@ -1,11 +1,49 @@
 ---
+import type { projectSection } from "@/types/project-preview";
 
+interface Props {
+    Projects: projectSection;
+}
+
+const { Projects } = Astro.props;
 ---
 
-<div class="w-full h-auto">
-    <div class="px-20 py-20">
-        <h2 class="text-xl py-5 text-center">Titulo Intro Preview Projects</h2>
-        <p class="py-4 mx-16 text-center">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo nihil officiis unde porro excepturi dolore provident recusandae maxime praesentium asperiores impedit numquam, earum quia, eveniet facere laudantium dicta incidunt perferendis ipsam vel. Soluta quasi aperiam pariatur voluptatibus veniam! Blanditiis dolores natus officia neque cumque modi quasi veritatis tempora impedit nulla!</p>
+<div class="w-full h-auto flex flex-col items-center">
+    <div class="text-center px-16 py-20">
+        <p class="text-center w-[900px]">{Projects.text}</p>
+    </div>
+    <div class="w-full rounded overflow-hidden shadow-lg bg-white px-20">
+        {
+            Projects.projectZone?.map((projects) => (
+                <div class="flex border-slate-400 border-opacity-30 border-2 my-10">
+                    <div>
+                        <img
+                            class="w-[1000px]"
+                            src={projects.heroPreview.url}
+                            alt="Card image"
+                        />
+                    </div>
+                    <div class="px-6 py-4 items-center flex">
+                        <div class="flex flex-col h-full">
+                            <div class="flex-1 mt-24">
+                                <div class="font-bold text-xl mb-2">
+                                    <h2>{projects.title}</h2>
+                                </div>
+                                <p class="text-gray-700 text-base">
+                                    {projects.intro}
+                                </p>
+                            </div>
+                            <div class="pt-4 pb-2">
+                                <div class="pt-4 pb-2">
+                                    <button class="text-custom-blue py-2 px-4 border-2 border-opacity-30 border-custom-blue hover:bg-blue-700 hover:text-white">
+                                        ir al proyecto
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ))
+        }
     </div>
 </div>
