@@ -2,13 +2,13 @@
 import type { insideSection } from "@/types/home-project";
 
 interface Props {
-    inside: insideSection; //Se queja que no encuentra el insideSection
+    inside: insideSection;
 }
 
 const { inside } = Astro.props;
 ---
 
-<div class="flex justify-center w-full h-auto bg-lime-100">
+<div class="flex justify-center w-full h-auto px-16">
     <div class="text-center py-5">
         <h2 class="text-xl py-5">{inside.title}</h2>
         <a
@@ -18,7 +18,5 @@ const { inside } = Astro.props;
             >{inside.button}</a
         >
         <img src={inside.image?.url} alt="" class="w-4/5 mx-auto py-5" />
-        <!--Es correcto
-        agregar el ? para que pueda ser undifined -->
     </div>
 </div>
