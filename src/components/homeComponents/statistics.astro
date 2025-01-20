@@ -9,26 +9,26 @@ const { statistics } = Astro.props;
 ---
 
 <div
-    class="w-full px-32 h-[600px] justify-center items-center flex"
+    class="w-full px-8 sm:px-16 md:px-32 h-[600px] justify-center items-center flex"
     style="background-image: url('https://res.cloudinary.com/dronteu5m/image/upload/v1737323188/strapi-demo/arbolbg_3967c4afa0.webp'); background-position: bottom right; background-repeat: no-repeat; background-size: 300px 300px;"
 >
     <div>
         <div class="flex items-center justify-center py-4">
-            <div class="text-center w-[1100px]">
-                <h2 class="text-3xl py-3 font-bold">
+            <div class="text-center w-full md:w-[1100px]]">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl py-3 font-bold">
                     {statistics.title}
                 </h2>
-                <p class="py-3 text-center">{statistics.text}</p>
+                <p class="py-3 text-center text-sm sm:text-base md:text-lg">{statistics.text}</p>
             </div>
         </div>
-        <div class="grid grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {
                 statistics.statSection?.map((stats) => (
                     <div class="text-center my-4">
-                        <h3 class="text-2xl font-bold text-custom-blue">
+                        <h3 class="text-xl sm:text-2xl font-bold text-custom-blue">
                             {stats.number}
                         </h3>
-                        <p class="text-lg text-zinc-500">{stats.text}</p>
+                        <p class="text-sm sm:text-base md:text-lg text-zinc-500">{stats.text}</p>
                     </div>
                 ))
             }
@@ -44,3 +44,17 @@ const { statistics } = Astro.props;
         </div>
     </div>
 </div>
+
+<style>
+    @media (max-width: 640px) {
+        .h-[600px] {
+            height: auto; /* Ajusta la altura en pantallas pequeñas */
+        }
+        .w-[1100px] {
+            width: 100%; /* Asegura que el contenido ocupe todo el ancho disponible */
+        }
+        .text-3xl {
+            font-size: 1.5rem; /* Reduce el tamaño del texto */
+        }
+    }
+</style>

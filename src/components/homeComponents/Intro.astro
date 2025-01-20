@@ -12,11 +12,11 @@ const { introduction } = Astro.props;
     class="w-full h-[350px] bg-custom-green flex items-center"
     style="background-image: url('https://res.cloudinary.com/dronteu5m/image/upload/v1737321923/strapi-demo/casabg_5f6e63cbfc.webp'); background-position: bottom left; background-repeat: no-repeat; background-size: 300px 300px;"
 >
-    <div class="px-40">
-        <h2 class="text-5xl text-white drop-shadow-lg font-bold">
+    <div class="px-8 sm:px-16 md:px-32 lg:px-40">
+        <h2 class="text-5xl sm:text-4xl md:text-5xl text-white drop-shadow-lg font-bold">
             {introduction.title}
         </h2>
-        <p class="py-5 text-white drop-shadow-lg">
+        <p class="py-5 text-sm sm:text-base md:text-lg text-white drop-shadow-lg">
             {introduction.text}
         </p>
         <a
@@ -27,3 +27,18 @@ const { introduction } = Astro.props;
         >
     </div>
 </div>
+
+<style>
+    @media (max-width: 640px) {
+        .h-[350px] {
+            height: auto; /* Ajusta la altura en pantallas pequeñas */
+        }
+        .px-40 {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+        .text-5xl {
+            font-size: 2rem; /* Reduce el tamaño del texto */
+        }
+    }
+</style>
